@@ -46,3 +46,8 @@
     
     color: #fff;
 }
+@media (min-width: 768px) {
+    .ma {
+      font-size: 3.5rem;
+    }
+  }

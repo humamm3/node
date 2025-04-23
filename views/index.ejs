@@ -110,21 +110,32 @@
     
 
 
-<main class="d-flex flex-nowrap">
+<main class="d-flex flex-nowrap" style=" overflow-x: auto;">
  <%- include('./combonants/sidebar.ejs', {currentPage: "index"}) %>
 
 
-  <section class="w-100">
+  <section class="w-100" >
     <%- include("./combonants/navbar.ejs"); %>
     
 
+    <% if (arr.length === 0) { %>
+      <h1 style="text-align: center; margin-top: 4rem;">No data available</h1>
+      <% } %>
 
 
 
-    <table 
-    style="width: 99%;" 
-    class="text-center mx-auto table mt-5 table-striped table-bordered ">
-      <thead>
+      <% if (arr.length > 0) { %>
+        <table
+        style="width: 99%"
+        class="text-center mx-auto table mt-5 table-striped table-bordered"
+      >
+
+
+
+
+    
+    
+      <thead style="width: 100%; border-collapse: collapse ;">
         <tr>
           <th scope="col">#</th>
           <th scope="col">Full Name</th>
@@ -182,6 +193,7 @@
         <% }) %>
       </tbody>
     </table>
+    <% } %>
   </section>
 </main>
 <script src="./js/bootstrap.bundle.min.js"></script>
